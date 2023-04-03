@@ -1,0 +1,33 @@
+body {
+  background-color: #f7f7f7;
+  font-family: 'Lato', sans-serif;
+}
+
+button {
+  padding: 10px 24px;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid
+}
+
+button.default {
+  border-color: black;
+  background-color: white;
+}
+
+button.primary {
+  background-color: #0083B0;
+  border: none;
+  color: white;
+}
+
+button.default:hover{
+  background-color: #f4f4f4;
+}
+
+button.primary:hover {
+  background-color: #00759d;
+}
