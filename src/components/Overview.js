@@ -1,3 +1,4 @@
+import { Slider } from './Slider';
 import './Overview.css';
 
 export const Overview = () => {
@@ -6,7 +7,7 @@ export const Overview = () => {
       <div className="overview-content">
         <h2> Your expenses this month </h2>
         <h3> $500.00 </h3>
-        <input type="range" min="0" max="100" disabled></input>
+        <Slider />
         <hr />
       </div>
     </div>

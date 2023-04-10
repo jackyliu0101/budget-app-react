@@ -40,7 +40,6 @@ input[type='range'] {
   background: #999;
   background-image:linear-gradient(#0083B0, #0083B0);
   background-repeat: no-repeat;
-  background-size: 50%;
 }
 
 input[type='range']::-webkit-slider-thumb {
@@ -57,4 +56,16 @@ input[type='range']::-webkit-slider-runnable-track {
   background: transparent;
   border: none;
   box-shadow: none;
+}
+
+input[type='range'].bg-grey {
+  background: #999;
+  background-image:linear-gradient(#0083B0, #0083B0);
+  background-repeat: no-repeat;
+}
+
+input[type='range'].bg-red {
+  background: #990622;
+  background-image:linear-gradient(#0083B0, #0083B0);
+  background-repeat: no-repeat;
 }
