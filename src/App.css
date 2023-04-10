@@ -32,14 +32,17 @@ button.primary:hover {
   background-color: #00759d;
 }
 
-input[type='range'] {
+input[type='range'].progress {
   -webkit-appearance: none;
   height: 10px;
   width: 100%;
   border-radius: 7px;
-  background: #999;
   background-image:linear-gradient(#0083B0, #0083B0);
   background-repeat: no-repeat;
+}
+
+input[type='range'].progress::-webkit-slider-thumb {
+  display: none;
 }
 
 input[type='range']::-webkit-slider-thumb {
@@ -58,14 +61,10 @@ input[type='range']::-webkit-slider-runnable-track {
   box-shadow: none;
 }
 
-input[type='range'].bg-grey {
+.progress.bg-grey {
   background: #999;
-  background-image:linear-gradient(#0083B0, #0083B0);
-  background-repeat: no-repeat;
 }
 
-input[type='range'].bg-red {
+.progress.bg-red {
   background: #990622;
-  background-image:linear-gradient(#0083B0, #0083B0);
-  background-repeat: no-repeat;
 }
