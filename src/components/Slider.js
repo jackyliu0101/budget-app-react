@@ -7,10 +7,6 @@ export const Slider = ({ currentValue, maxValue, isDisabled}) => {
     return { backgroundSize: `${(value * 100) / maxValue}%` }
   }
 
-  const getBackgroundColor = () => {
-    return ((value / maxValue) > 0.85) ? { background: 'red' } : { background: '#999'}
-  }
-
   return (
     <input
       className={`progress ${(value / maxValue > 0.85) ? "bg-red" : "bg-grey"}`}
