@@ -1,6 +1,15 @@
 body {
   background-color: #f7f7f7;
   font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding-left: 220px;
 }
 
 button {
@@ -67,4 +76,13 @@ input[type='range']::-webkit-slider-runnable-track {
 
 .progress.bg-red {
   background: #990622;
+}
+
+.sidePanel {
+  height: 100%;
+  width: 220px;
+  background-color: aqua;
+  position: fixed;
+  left: 0;
+  z-index: 999;
 }
