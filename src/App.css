@@ -7,16 +7,13 @@ body {
 
 .App {
   height: 100vh;
-  display: flex;
-  flex-direction: row;
   padding-left: 220px;
 }
 
 .content-container {
-  background-color: #fff;
   display: flex;
   width: 90%;
-  margin: auto;
+  margin: 30px auto;
 }
 
 button {
@@ -90,6 +87,7 @@ input[type='range']::-webkit-slider-runnable-track {
   width: 220px;
   background-color: #fff;
   position: fixed;
+  top: 0;
   left: 0;
   z-index: 999;
   display: flex;
