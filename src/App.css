@@ -12,6 +12,7 @@ body {
 
 .content-container {
   display: flex;
+  flex-direction: column;
   width: 90%;
   margin: 30px auto;
 }
