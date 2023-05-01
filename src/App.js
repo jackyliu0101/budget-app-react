@@ -1,7 +1,7 @@
 import './App.css';
-import { Overview } from './pages/Overview';
-import { Budget } from './pages/Budget';
-import { Expenses } from './pages/Expenses';
+import { Overview } from './pages/overview/Overview';
+import { Budget } from './pages/budget/Budget';
+import { Expenses } from './pages/expenses/Expenses';
 import { SidePanel } from './components/SidePanel';
 import { Route, Routes } from 'react-router-dom';
 
