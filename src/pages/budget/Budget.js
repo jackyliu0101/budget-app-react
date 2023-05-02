@@ -7,13 +7,13 @@ export const Budget = () => {
     {
       id: 0,
       name: "Miscellaneous",
-      amount: 20
+      amount: 20,
     },
     {
       id: 1,
       name: "Food",
       amount: 30.5
-    }
+    },
   ]
 
   return (
