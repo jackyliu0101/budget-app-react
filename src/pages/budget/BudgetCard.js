@@ -1,10 +1,10 @@
 import './Budget.css';
 
-export const BudgetCard = () => {
+export const BudgetCard = ({name, amount}) => {
   return (
     <div className="budget-card">
-    <div className="budget-card-amount">$0.00</div>
-      <div className="budget-card-label">Miscellaneous</div>
+    <div className="budget-card-amount">${amount}</div>
+      <div className="budget-card-label">{name}</div>
     </div>
   )
 }
