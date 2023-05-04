@@ -1,6 +1,8 @@
 import './Budget.css';
+import { useState } from 'react';
 import { BudgetCardsList } from './BudgetCardsList';
 import { Button } from '../../components/Button';
+import { BudgetModal } from './BudgetModal';
 
 export const Budget = () => {
   const budgetItems = [
@@ -16,6 +18,12 @@ export const Budget = () => {
     },
   ]
 
+  const [showModal, setShowModal] = useState(false);
+
+  const onShowModal = () => {
+    setShowModal(true)
+  }
+
   return (
     <>
       <div className="total-budget-container">
@@ -24,9 +32,10 @@ export const Budget = () => {
         <hr/>
       </div>
       <div>
-        <Button type="primary" title="Add" />
+        <Button type="primary" title="Add" onClick={onShowModal} />
       </div>
       <BudgetCardsList budgets={budgetItems}/>
+      <BudgetModal showState={showModal} handleClose={() => setShowModal(false)} />
     </>
   )
 }
