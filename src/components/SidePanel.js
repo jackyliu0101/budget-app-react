@@ -2,7 +2,7 @@ import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
 export const SidePanel = () => {
   return (
-    <div className="sidePanel">
+    <div className="side-panel">
       <Link to="/" className="site-title">MyExpenses</Link>
       <ul>
         <CustomLink to="/">Overview</CustomLink>

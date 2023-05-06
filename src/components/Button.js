@@ -1,9 +1,10 @@
-export const Button = ({ type, title, onClick }) => {
+export const Button = ({ variant, type, title, onClick }) => {
   return (
-    <button className={type} onClick={onClick}>{title}</button>
+    <button className={variant} type={type} onClick={onClick}>{title}</button>
   )
 }
 
 Button.defaultProps = {
-  type: 'default'
+  variant: 'default',
+  type: 'button',
 }

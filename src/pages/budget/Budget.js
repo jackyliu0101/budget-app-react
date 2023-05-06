@@ -32,7 +32,7 @@ export const Budget = () => {
         <hr/>
       </div>
       <div>
-        <Button type="primary" title="Add" onClick={onShowModal} />
+        <Button variant="primary" title="Add" onClick={onShowModal} />
       </div>
       <BudgetCardsList budgets={budgetItems}/>
       <BudgetModal showState={showModal} handleClose={() => setShowModal(false)} />
