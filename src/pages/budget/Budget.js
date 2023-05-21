@@ -7,12 +7,12 @@ import { BudgetModal } from './BudgetModal';
 export const Budget = () => {
   const dummyBudgetItems = [
     {
-      id: 0,
+      id: 1,
       name: "Miscellaneous",
       amount: 20,
     },
     {
-      id: 1,
+      id: 2,
       name: "Food",
       amount: 30.5
     },
@@ -20,34 +20,62 @@ export const Budget = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [budgetItems, setBudgetItems] = useState(dummyBudgetItems);
+  const [selectedBudget, setSelectedBudget] = useState(null);
+
+  const calculateTotalBudgetAmount = (budgetItems) => {
+    const allBudgetAmounts = budgetItems.map(budgetItem => budgetItem.amount)
+    return "$" + allBudgetAmounts.reduce((accumulator, current) => (accumulator += current), 0).toFixed(2)
+  }
 
   const onShowModal = () => {
     setShowModal(true)
   }
 
-  const addBudgetItem = (budgetInfo) => {
+  const onCloseModal = () => {
+    setShowModal(false)
+    setSelectedBudget(null)
+  }
+
+  const saveBudgetItem = (budgetInfo) => {
     let item = {
-      id: Math.floor(Math.random() * 100000 + 5),
+      id: selectedBudget == null ? Math.floor(Math.random() * 100000 + 5) : selectedBudget.id,
       name: budgetInfo.name,
       amount: budgetInfo.amount,
     }
 
-    const updatedBudgetItems = [item, ...budgetItems]
+    let updatedBudgetItems = []
+    if (selectedBudget == null) {
+      updatedBudgetItems = [item, ...budgetItems]
+    } else {
+      updatedBudgetItems = budgetItems.map(budgetItem => {
+        return (budgetItem.id === item.id) ? {...budgetItem, name: item.name, amount: item.amount } : budgetItem
+      })
+    }
+
     setBudgetItems(updatedBudgetItems);
+  }
+
+  const onBudgetCardClick = (budgetItem) => {
+    setSelectedBudget(budgetItem)
+    setShowModal(true)
   }
 
   return (
     <>
       <div className="total-budget-container">
         <h3>Total Budget:</h3>
-        <h1>$0.00</h1>
+        <h1>{calculateTotalBudgetAmount(budgetItems)}</h1>
         <hr/>
       </div>
       <div>
         <Button variant="primary" title="Add" onClick={onShowModal} />
       </div>
-      <BudgetCardsList budgets={budgetItems}/>
-      <BudgetModal showState={showModal} handleClose={() => setShowModal(false)} handleAddBudgetItem={addBudgetItem} />
+      <BudgetCardsList budgets={budgetItems} handleBudgetCardClick={onBudgetCardClick} />
+      <BudgetModal
+        showState={showModal}
+        handleClose={onCloseModal}
+        selectedBudget={selectedBudget}
+        handleSaveBudgetItem={saveBudgetItem} />
     </>
   )
 }
