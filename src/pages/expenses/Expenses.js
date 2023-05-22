@@ -1,5 +1,11 @@
 export const Expenses = () => {
   return (
-    <h1>Expenses</h1>
+    <>
+      <div className="total-container">
+        <h3>Total Expenses:</h3>
+        <h1>$0.00</h1>
+        <hr/>
+      </div>
+    </>
   )
 }

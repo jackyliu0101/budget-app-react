@@ -1,11 +1,3 @@
-.total-budget-container h3 {
-  margin: 0;
-}
-
-.total-budget-container h1 {
-  margin: 10px 0 0;
-}
-
 .budget-cards-list {
   display: grid;
   grid-template-columns: repeat(5, minmax(125px, 1fr));

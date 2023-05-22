@@ -5,7 +5,6 @@ export const BudgetModal = ({ showState, selectedBudget, handleClose, handleSave
     return null
   }
 
-
   const submit = (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)

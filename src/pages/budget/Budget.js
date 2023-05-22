@@ -62,7 +62,7 @@ export const Budget = () => {
 
   return (
     <>
-      <div className="total-budget-container">
+      <div className="total-container">
         <h3>Total Budget:</h3>
         <h1>{calculateTotalBudgetAmount(budgetItems)}</h1>
         <hr/>

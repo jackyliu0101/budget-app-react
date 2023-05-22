@@ -143,3 +143,11 @@ input[type='range']::-webkit-slider-runnable-track {
   background-color: #eaeaea;
   cursor: pointer;
 }
+
+.total-container h3 {
+  margin: 0;
+}
+
+.total-container h1 {
+  margin: 10px 0 0;
+}
