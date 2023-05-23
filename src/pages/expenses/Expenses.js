@@ -8,8 +8,8 @@ export const Expenses = () => {
         <h1>$0.00</h1>
         <hr/>
       </div>
-      <div className="expenses-content">
-        <div className="expenses-container">
+      <div className="expenses-container">
+        <div className="expenses-content">
           <h3>History</h3>
           <ul className="expenses-list">
             <li>Test</li>

@@ -1,14 +1,13 @@
-.expenses-content {
+.expenses-container {
   display: flex;
-  height: 100vh;
   margin-top: 10px ;
 }
 
-.expenses-content h3 {
+.expenses-container h3 {
   margin: 0;
 }
 
-.expenses-container {
+.expenses-content {
   width: 60%;
 }
 
