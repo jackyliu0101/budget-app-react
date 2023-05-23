@@ -1,3 +1,5 @@
+import './Expenses.css'
+
 export const Expenses = () => {
   return (
     <>
@@ -5,6 +7,20 @@ export const Expenses = () => {
         <h3>Total Expenses:</h3>
         <h1>$0.00</h1>
         <hr/>
+      </div>
+      <div className="expenses-content">
+        <div className="expenses-container">
+          <h3>History</h3>
+          <ul className="expenses-list">
+            <li>Test</li>
+            <li>Test1</li>
+            <li>Test2</li>
+          </ul>
+        </div>
+        <hr style={{margin: "0 10px"}} />
+        <div>
+          <h3>Hello world</h3>
+        </div>
       </div>
     </>
   )

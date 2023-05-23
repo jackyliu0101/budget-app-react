@@ -1,0 +1,25 @@
+.expenses-content {
+  display: flex;
+  height: 100vh;
+  margin-top: 10px ;
+}
+
+.expenses-content h3 {
+  margin: 0;
+}
+
+.expenses-container {
+  width: 60%;
+}
+
+.expenses-list {
+  list-style-type: none;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.expenses-list li {
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+}
