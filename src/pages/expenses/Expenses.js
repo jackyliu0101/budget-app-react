@@ -1,4 +1,5 @@
-import './Expenses.css'
+import { AddExpenseForm } from './AddExpenseForm';
+import './Expenses.css';
 
 export const Expenses = () => {
   return (
@@ -17,9 +18,9 @@ export const Expenses = () => {
             <li>Test2</li>
           </ul>
         </div>
-        <hr style={{margin: "0 10px"}} />
-        <div>
-          <h3>Hello world</h3>
+        <hr style={{ margin: "0 10px" }} />
+        <div className="expenses-form-container">
+          <AddExpenseForm />
         </div>
       </div>
     </>

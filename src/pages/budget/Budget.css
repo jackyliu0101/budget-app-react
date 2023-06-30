@@ -80,19 +80,11 @@
   width: 85%;
   margin: auto;
   height: 100%;
-  display: flex;
-  flex-direction: column;
   justify-content: space-around;
 }
 
-.budget-modal-form-control {
-  display: flex;
-  flex-direction: column;
+.budget-form-control {
   gap: 10px;
-}
-
-.budget-modal-form-control input {
-  height: 1.5rem;
 }
 
 .budget-modal-buttons {

@@ -1,6 +1,6 @@
 .expenses-container {
   display: flex;
-  margin-top: 10px ;
+  margin-top: 10px;
 }
 
 .expenses-container h3 {
@@ -21,4 +21,17 @@
   background-color: #fff;
   padding: 10px;
   margin: 10px 0;
+}
+
+.expenses-form-container {
+  width: 40%;
+}
+
+.add-expense-form {
+  height: auto;
+}
+
+.expense-form-control {
+  margin: 8px 0;
+  gap: 5px;
 }

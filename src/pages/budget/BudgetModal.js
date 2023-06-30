@@ -30,12 +30,12 @@ export const BudgetModal = ({ showState, selectedBudget, handleClose, handleSave
           { (selectedBudget == null) ?  <h3>Add Budget</h3> : <h3>Edit Budget</h3> }
         </div>
         <div className="budget-modal-content">
-          <form className="budget-modal-form" onSubmit={submit}>
-            <div className="budget-modal-form-control">
+          <form className="budget-modal-form add-form" onSubmit={submit}>
+            <div className="budget-form-control form-control">
               <label htmlFor="name">Budget Name</label>
               <input id="name" name="name" type="text" defaultValue={selectedBudget ? selectedBudget.name : ''}/>
             </div>
-            <div className="budget-modal-form-control">
+            <div className="budget-form-control form-control">
               <label htmlFor="amount">Amount</label>
               <input id="amount" name="amount" type="number" step="0.01" defaultValue={selectedBudget ? selectedBudget.amount : ''}/>
             </div>
