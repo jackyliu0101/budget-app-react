@@ -1,7 +1,21 @@
 import { AddExpenseForm } from './AddExpenseForm';
+import { ExpenseList } from './ExpenseList'
 import './Expenses.css';
 
 export const Expenses = () => {
+  const dummyExpenseItems = [
+    {
+      id: 1,
+      name: 'groceries',
+      amount: 30,
+    },
+    {
+      id: 2,
+      name: 'book',
+      amount: 25,
+    }
+  ];
+
   return (
     <>
       <div className="total-container">
@@ -10,18 +24,9 @@ export const Expenses = () => {
         <hr/>
       </div>
       <div className="expenses-container">
-        <div className="expenses-content">
-          <h3>History</h3>
-          <ul className="expenses-list">
-            <li>Test</li>
-            <li>Test1</li>
-            <li>Test2</li>
-          </ul>
-        </div>
+        <ExpenseList expenses={dummyExpenseItems}/>
         <hr style={{ margin: "0 10px" }} />
-        <div className="expenses-form-container">
-          <AddExpenseForm />
-        </div>
+        <AddExpenseForm />
       </div>
     </>
   )

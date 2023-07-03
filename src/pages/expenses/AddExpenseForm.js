@@ -1,4 +1,5 @@
 import { Button } from '../../components/Button';
+import './Expenses.css';
 
 export const AddExpenseForm = () => {
   const submit = (e) => {
@@ -14,7 +15,7 @@ export const AddExpenseForm = () => {
 
 
   return (
-    <div>
+    <div className="expenses-form-container">
       <h3>Add Expense</h3>
       <form className="add-form add-expense-form" onSubmit={submit}>
         <div className="expense-form-control form-control">
