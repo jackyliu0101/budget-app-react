@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { BudgetCardsList } from './BudgetCardsList';
 import { Button } from '../../components/Button';
 import { BudgetModal } from './BudgetModal';
+import { Header } from '../../components/Header';
 
 export const Budget = () => {
   const dummyBudgetItems = [
@@ -62,11 +63,7 @@ export const Budget = () => {
 
   return (
     <>
-      <div className="total-container">
-        <h3>Total Budget:</h3>
-        <h1>{calculateTotalBudgetAmount(budgetItems)}</h1>
-        <hr/>
-      </div>
+      <Header title="Total Budget:" amount={calculateTotalBudgetAmount(budgetItems)} />
       <div>
         <Button variant="primary" title="Add" onClick={onShowModal} />
       </div>

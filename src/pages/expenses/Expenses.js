@@ -1,5 +1,6 @@
 import { AddExpenseForm } from './AddExpenseForm';
-import { ExpenseList } from './ExpenseList'
+import { ExpenseList } from './ExpenseList';
+import { Header } from '../../components/Header';
 import './Expenses.css';
 
 export const Expenses = () => {
@@ -18,13 +19,9 @@ export const Expenses = () => {
 
   return (
     <>
-      <div className="total-container">
-        <h3>Total Expenses:</h3>
-        <h1>$0.00</h1>
-        <hr/>
-      </div>
+      <Header title="Total Expenses:" amount="$0.00" />
       <div className="expenses-container">
-        <ExpenseList expenses={dummyExpenseItems}/>
+        <ExpenseList expenses={dummyExpenseItems} />
         <hr style={{ margin: "0 10px" }} />
         <AddExpenseForm />
       </div>
