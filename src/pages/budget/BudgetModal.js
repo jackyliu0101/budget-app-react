@@ -2,25 +2,25 @@ import { Button } from '../../components/Button';
 
 export const BudgetModal = ({ showState, selectedBudget, handleClose, handleSaveBudgetItem }) => {
   if (!showState) {
-    return null
+    return null;
   }
 
   const submit = (e) => {
-    e.preventDefault()
-    const formData = new FormData(e.target)
-    const formJson = Object.fromEntries(formData.entries())
-    const name = formJson.name.trim()
-    const amount = parseFloat(formJson.amount)
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const formJson = Object.fromEntries(formData.entries());
+    const name = formJson.name.trim();
+    const amount = parseFloat(formJson.amount);
 
     if (name.length > 0 && !isNaN(amount) && amount > 0) {
       const budget = {
         name: name,
         amount: amount,
       }
-      handleSaveBudgetItem(budget)
+      handleSaveBudgetItem(budget);
     }
 
-    handleClose()
+    handleClose();
   }
 
   return (

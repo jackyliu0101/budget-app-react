@@ -7,4 +7,4 @@ export const Button = ({ variant, type, title, onClick }) => {
 Button.defaultProps = {
   variant: 'default',
   type: 'button',
-}
+};

@@ -14,11 +14,11 @@ export const SidePanel = () => {
 }
 
 export const CustomLink = ({ to, children }) => {
-  const resolvedPath = useResolvedPath(to)
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+  const resolvedPath = useResolvedPath(to);
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
   return (
     <li className={isActive ? "active" : ""}>
       <Link className="custom-link" to={to}>{children}</Link>
-     </li>
+    </li>
   )
 }

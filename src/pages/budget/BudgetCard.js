@@ -2,8 +2,8 @@ import './Budget.css';
 
 export const BudgetCard = ({ budget, handleClick }) => {
   const onCardClick = () => {
-    handleClick(budget)
-  }
+    handleClick(budget);
+  };
 
   return (
     <div className="budget-card" onClick={onCardClick}>

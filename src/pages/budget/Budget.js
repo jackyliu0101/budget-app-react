@@ -17,24 +17,24 @@ export const Budget = () => {
       name: "Food",
       amount: 30.5
     },
-  ]
+  ];
 
   const [showModal, setShowModal] = useState(false);
   const [budgetItems, setBudgetItems] = useState(dummyBudgetItems);
   const [selectedBudget, setSelectedBudget] = useState(null);
 
   const calculateTotalBudgetAmount = (budgetItems) => {
-    const allBudgetAmounts = budgetItems.map(budgetItem => budgetItem.amount)
-    return "$" + allBudgetAmounts.reduce((accumulator, current) => (accumulator += current), 0).toFixed(2)
+    const allBudgetAmounts = budgetItems.map(budgetItem => budgetItem.amount);
+    return "$" + allBudgetAmounts.reduce((accumulator, current) => (accumulator += current), 0).toFixed(2);
   }
 
   const onShowModal = () => {
-    setShowModal(true)
+    setShowModal(true);
   }
 
   const onCloseModal = () => {
-    setShowModal(false)
-    setSelectedBudget(null)
+    setShowModal(false);
+    setSelectedBudget(null);
   }
 
   const saveBudgetItem = (budgetInfo) => {
@@ -42,23 +42,23 @@ export const Budget = () => {
       id: selectedBudget == null ? Math.floor(Math.random() * 100000 + 5) : selectedBudget.id,
       name: budgetInfo.name,
       amount: budgetInfo.amount,
-    }
+    };
 
-    let updatedBudgetItems = []
+    let updatedBudgetItems = [];
     if (selectedBudget == null) {
-      updatedBudgetItems = [item, ...budgetItems]
+      updatedBudgetItems = [item, ...budgetItems];
     } else {
       updatedBudgetItems = budgetItems.map(budgetItem => {
-        return (budgetItem.id === item.id) ? {...budgetItem, name: item.name, amount: item.amount } : budgetItem
-      })
+        return (budgetItem.id === item.id) ? {...budgetItem, name: item.name, amount: item.amount } : budgetItem;
+      });
     }
 
     setBudgetItems(updatedBudgetItems);
   }
 
   const onBudgetCardClick = (budgetItem) => {
-    setSelectedBudget(budgetItem)
-    setShowModal(true)
+    setSelectedBudget(budgetItem);
+    setShowModal(true);
   }
 
   return (

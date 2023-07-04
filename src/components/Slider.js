@@ -4,7 +4,7 @@ export const Slider = ({ currentValue, maxValue, isDisabled}) => {
   const [value, setValue] = useState(currentValue);
 
   const getBackgroundSize = () => {
-    return { backgroundSize: `${(value * 100) / maxValue}%` }
+    return { backgroundSize: `${(value * 100) / maxValue}%` };
   }
 
   return (
