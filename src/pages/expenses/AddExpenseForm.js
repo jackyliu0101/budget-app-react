@@ -1,7 +1,7 @@
 import { Button } from '../../components/Button';
 import './Expenses.css';
 
-export const AddExpenseForm = () => {
+export const AddExpenseForm = ({ handleSubmit }) => {
   const submit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -9,8 +9,12 @@ export const AddExpenseForm = () => {
     const expense = formJson.expense.trim();
     const amount = parseFloat(formJson.amount);
 
-    console.log(expense);
-    console.log(amount);
+    const expenseInfo = {
+      name: expense,
+      amount: amount,
+    };
+
+    handleSubmit(expenseInfo);
   }
 
 
@@ -24,7 +28,7 @@ export const AddExpenseForm = () => {
         </div>
         <div className="expense-form-control form-control">
           <label htmlFor="amount">Amount</label>
-          <input id="amount" name="amount" type="number" placeholder="Enter amount" />
+          <input id="amount" name="amount" type="number" step="0.01" placeholder="Enter amount" />
         </div>
         <Button type="submit" variant="primary" title="Save" />
       </form>

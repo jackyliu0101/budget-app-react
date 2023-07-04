@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { AddExpenseForm } from './AddExpenseForm';
 import { ExpenseList } from './ExpenseList';
 import { Header } from '../../components/Header';
@@ -17,13 +18,26 @@ export const Expenses = () => {
     }
   ];
 
+  const [expenseItems, setExpenseItems] = useState(dummyExpenseItems);
+
+  const saveExpenseItem = (newExpenseInfo) => {
+    const newExpenseItem = {
+      id: Math.floor(Math.random() * 100000 + 5),
+      name: newExpenseInfo.name,
+      amount: newExpenseInfo.amount,
+    };
+
+    const updatedExpenseItems = [...expenseItems, newExpenseItem];
+    setExpenseItems(updatedExpenseItems);
+  }
+
   return (
     <>
       <Header title="Total Expenses:" amount="$0.00" />
       <div className="expenses-container">
-        <ExpenseList expenses={dummyExpenseItems} />
+        <ExpenseList expenses={expenseItems} />
         <hr style={{ margin: "0 10px" }} />
-        <AddExpenseForm />
+        <AddExpenseForm handleSubmit={saveExpenseItem} />
       </div>
     </>
   )
