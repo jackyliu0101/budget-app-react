@@ -32,7 +32,7 @@ export const AddExpenseForm = ({ handleSubmit }) => {
           <label htmlFor="amount">Amount</label>
           <input id="amount" type="number" value={amount} onChange={(e) => setAmount(e.target.value)} step="0.01" placeholder="Enter amount" />
         </div>
-        <Button type="submit" variant="primary" title="Save" />
+        <Button type="submit" disabled={!expenseName || !amount} variant="primary" title="Save" />
       </form>
     </div>
   )

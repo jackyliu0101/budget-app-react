@@ -38,12 +38,16 @@ button.primary {
   color: white;
 }
 
-button.default:hover{
+button.default:hover:enabled {
   background-color: #f4f4f4;
 }
 
-button.primary:hover {
+button.primary:hover:enabled {
   background-color: #00759d;
+}
+
+button:disabled {
+  background-color: gray;
 }
 
 input[type='range'].progress {
