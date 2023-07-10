@@ -1,6 +1,9 @@
 import { Button } from '../../components/Button';
+import { useContext } from 'react';
+import { GlobalContext } from '../../context/GlobalState';
 
-export const BudgetModal = ({ showState, selectedBudget, handleClose, handleSaveBudgetItem }) => {
+export const BudgetModal = ({ showState, selectedBudget, handleClose }) => {
+  const { addBudget, updateBudget } = useContext(GlobalContext);
   if (!showState) {
     return null;
   }
@@ -14,10 +17,16 @@ export const BudgetModal = ({ showState, selectedBudget, handleClose, handleSave
 
     if (name.length > 0 && !isNaN(amount) && amount > 0) {
       const budget = {
+        id: selectedBudget == null ? Math.floor(Math.random() * 100000 + 5) : selectedBudget.id,
         name: name,
         amount: amount,
       }
-      handleSaveBudgetItem(budget);
+
+      if (selectedBudget == null) {
+        addBudget(budget);
+      } else {
+        updateBudget(budget);
+      }
     }
 
     handleClose();
