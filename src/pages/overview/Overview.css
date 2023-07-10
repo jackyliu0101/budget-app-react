@@ -8,11 +8,11 @@
   margin: auto;
 }
 
-.overview-content {
+.overview-container div {
   width: inherit;
 }
 
-h3.overview-balance {
+.overview-container h3 {
   letter-spacing: 1px;
   margin: 0;
 }
