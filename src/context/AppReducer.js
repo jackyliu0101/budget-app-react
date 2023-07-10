@@ -12,6 +12,11 @@ export default (state, action) => {
           return (budget.id === action.payload.id) ? {...budget, name: action.payload.name, amount: action.payload.amount} : budget
         })
       }
+    case 'ADD_EXPENSE':
+      return {
+        ...state,
+        expenses: [...state.expenses, action.payload],
+      }
     default:
       return state;
   }

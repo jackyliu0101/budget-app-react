@@ -50,8 +50,15 @@ export const GlobalProvider = ({ children }) => {
     })
   }
 
+  function addExpense(expenseItem) {
+    dispatch({
+      type: 'ADD_EXPENSE',
+      payload: expenseItem,
+    })
+  }
+
   return (
-    <GlobalContext.Provider value={{budgets: state.budgets, expenses: state.expenses, addBudget, updateBudget}}>
+    <GlobalContext.Provider value={{budgets: state.budgets, expenses: state.expenses, addBudget, updateBudget, addExpense}}>
       {children}
     </GlobalContext.Provider>
   );

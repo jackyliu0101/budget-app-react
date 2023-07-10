@@ -1,24 +1,12 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { AddExpenseForm } from './AddExpenseForm';
 import { ExpenseList } from './ExpenseList';
 import { Header } from '../../components/Header';
+import { GlobalContext } from '../../context/GlobalState';
 import './Expenses.css';
 
 export const Expenses = () => {
-  const dummyExpenseItems = [
-    {
-      id: 1,
-      name: 'groceries',
-      amount: 30,
-    },
-    {
-      id: 2,
-      name: 'book',
-      amount: 25,
-    }
-  ];
-
-  const [expenseItems, setExpenseItems] = useState(dummyExpenseItems);
+  const { expenses, addExpense } = useContext(GlobalContext);
 
   const calculateTotalExpenses = (expenseItems) => {
     const allExpenseAmounts = expenseItems.map(expenseItems => expenseItems.amount);
@@ -32,15 +20,14 @@ export const Expenses = () => {
       amount: newExpenseInfo.amount,
     };
 
-    const updatedExpenseItems = [...expenseItems, newExpenseItem];
-    setExpenseItems(updatedExpenseItems);
+    addExpense(newExpenseItem);
   }
 
   return (
     <>
-      <Header title="Total Expenses:" amount={calculateTotalExpenses(expenseItems)} />
+      <Header title="Total Expenses:" amount={calculateTotalExpenses(expenses)} />
       <div className="expenses-container">
-        <ExpenseList expenses={expenseItems} />
+        <ExpenseList expenses={expenses} />
         <hr style={{ margin: "0 10px" }} />
         <AddExpenseForm handleSubmit={saveExpenseItem} />
       </div>
