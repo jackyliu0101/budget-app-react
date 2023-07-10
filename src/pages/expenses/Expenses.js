@@ -1,17 +1,13 @@
 import { useContext } from 'react';
-import { AddExpenseForm } from './AddExpenseForm';
-import { ExpenseList } from './ExpenseList';
-import { Header } from '../../components/Header';
 import { GlobalContext } from '../../context/GlobalState';
+import { CalculateTotalMonetaryAmount } from '../../helper';
+import { Header } from '../../components/Header';
+import { ExpenseList } from './ExpenseList';
+import { AddExpenseForm } from './AddExpenseForm';
 import './Expenses.css';
 
 export const Expenses = () => {
   const { expenses, addExpense } = useContext(GlobalContext);
-
-  const calculateTotalExpenses = (expenseItems) => {
-    const allExpenseAmounts = expenseItems.map(expenseItems => expenseItems.amount);
-    return "$" + allExpenseAmounts.reduce((accumulator, current) => (accumulator += current), 0).toFixed(2);
-  }
 
   const saveExpenseItem = (newExpenseInfo) => {
     const newExpenseItem = {
@@ -25,7 +21,7 @@ export const Expenses = () => {
 
   return (
     <>
-      <Header title="Total Expenses:" amount={calculateTotalExpenses(expenses)} />
+      <Header title="Total Expenses:" amount={'$' + CalculateTotalMonetaryAmount(expenses)} />
       <div className="expenses-container">
         <ExpenseList expenses={expenses} />
         <hr style={{ margin: "0 10px" }} />

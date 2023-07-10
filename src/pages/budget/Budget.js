@@ -1,21 +1,17 @@
-import './Budget.css';
 import { useState, useContext } from 'react';
+import { GlobalContext } from '../../context/GlobalState';
+import { CalculateTotalMonetaryAmount } from '../../helper';
+import { Header } from '../../components/Header';
 import { BudgetCardsList } from './BudgetCardsList';
 import { Button } from '../../components/Button';
 import { BudgetModal } from './BudgetModal';
-import { Header } from '../../components/Header';
-import { GlobalContext } from '../../context/GlobalState';
+import './Budget.css';
 
 export const Budget = () => {
   const { budgets } = useContext(GlobalContext);
 
   const [showModal, setShowModal] = useState(false);
   const [selectedBudget, setSelectedBudget] = useState(null);
-
-  const calculateTotalBudgetAmount = (budgetItems) => {
-    const allBudgetAmounts = budgetItems.map(budgetItem => budgetItem.amount);
-    return "$" + allBudgetAmounts.reduce((accumulator, current) => (accumulator += current), 0).toFixed(2);
-  }
 
   const onShowModal = () => {
     setShowModal(true);
@@ -33,7 +29,7 @@ export const Budget = () => {
 
   return (
     <>
-      <Header title="Total Budget:" amount={calculateTotalBudgetAmount(budgets)} />
+      <Header title="Total Budget:" amount={'$' + CalculateTotalMonetaryAmount(budgets)} />
       <div>
         <Button variant="primary" title="Add" onClick={onShowModal} />
       </div>
