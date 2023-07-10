@@ -1,9 +1,10 @@
 import './Budget.css';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { BudgetCardsList } from './BudgetCardsList';
 import { Button } from '../../components/Button';
 import { BudgetModal } from './BudgetModal';
 import { Header } from '../../components/Header';
+import { GlobalContext } from '../../context/GlobalState';
 
 export const Budget = () => {
   const dummyBudgetItems = [
@@ -18,6 +19,8 @@ export const Budget = () => {
       amount: 30.5
     },
   ];
+
+  const { budgets } = useContext(GlobalContext);
 
   const [showModal, setShowModal] = useState(false);
   const [budgetItems, setBudgetItems] = useState(dummyBudgetItems);
