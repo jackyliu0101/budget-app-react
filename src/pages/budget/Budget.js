@@ -20,7 +20,7 @@ export const Budget = () => {
     },
   ];
 
-  const { budgets } = useContext(GlobalContext);
+  const { budgets, addBudget, updateBudget } = useContext(GlobalContext);
 
   const [showModal, setShowModal] = useState(false);
   const [budgetItems, setBudgetItems] = useState(dummyBudgetItems);
@@ -49,14 +49,10 @@ export const Budget = () => {
 
     let updatedBudgetItems = [];
     if (selectedBudget == null) {
-      updatedBudgetItems = [item, ...budgetItems];
+      addBudget(item);
     } else {
-      updatedBudgetItems = budgetItems.map(budgetItem => {
-        return (budgetItem.id === item.id) ? {...budgetItem, name: item.name, amount: item.amount } : budgetItem;
-      });
+      updateBudget(item);
     }
-
-    setBudgetItems(updatedBudgetItems);
   }
 
   const onBudgetCardClick = (budgetItem) => {
@@ -66,11 +62,11 @@ export const Budget = () => {
 
   return (
     <>
-      <Header title="Total Budget:" amount={calculateTotalBudgetAmount(budgetItems)} />
+      <Header title="Total Budget:" amount={calculateTotalBudgetAmount(budgets)} />
       <div>
         <Button variant="primary" title="Add" onClick={onShowModal} />
       </div>
-      <BudgetCardsList budgets={budgetItems} handleBudgetCardClick={onBudgetCardClick} />
+      <BudgetCardsList budgets={budgets} handleBudgetCardClick={onBudgetCardClick} />
       <BudgetModal
         showState={showModal}
         handleClose={onCloseModal}
