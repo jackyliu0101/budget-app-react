@@ -23,7 +23,10 @@ export const Expenses = () => {
     <>
       <Header title="Total Expenses:" amount={'$' + CalculateTotalMonetaryAmount(expenses)} />
       <div className="expenses-container">
-        <ExpenseList expenses={expenses} />
+        <div className="expenses-history">
+          <h3>History</h3>
+          <ExpenseList expenses={expenses} />
+        </div>
         <hr style={{ margin: "0 10px" }} />
         <AddExpenseForm handleSubmit={saveExpenseItem} />
       </div>

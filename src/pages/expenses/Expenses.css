@@ -7,17 +7,17 @@
   margin: 0;
 }
 
-.expenses-content {
+.expenses-history {
   width: 60%;
 }
 
-.expenses-content ul {
+.expenses-history ul {
   list-style-type: none;
   padding: 0;
   margin-right: 10px;
 }
 
-.expenses-content ul li {
+.expenses-history ul li {
   display: flex;
   background-color: #fff;
   border-left: solid #0083B0 2px;
