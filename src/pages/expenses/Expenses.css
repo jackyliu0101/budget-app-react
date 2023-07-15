@@ -20,7 +20,8 @@
 .expenses-history ul li {
   display: flex;
   background-color: #fff;
-  border-left: solid #0083B0 2px;
+  border: solid 0.5px;
+  border-left: solid #0083B0 3px;
   padding: 10px;
   margin: 10px 0;
   justify-content: space-between;
