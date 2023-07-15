@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { GlobalContext } from '../../context/GlobalState';
 import { CalculateTotalMonetaryAmount } from '../../helper';
 import { Header } from '../../components/Header';
-import { ExpenseList } from './ExpenseList';
+import { HistoryList } from '../../components/HistoryList';
 import { AddExpenseForm } from './AddExpenseForm';
 import './Expenses.css';
 
@@ -25,7 +25,7 @@ export const Expenses = () => {
       <div className="expenses-container">
         <div className="expenses-history">
           <h3>History</h3>
-          <ExpenseList expenses={expenses} />
+          <HistoryList items={expenses} />
         </div>
         <hr style={{ margin: "0 10px" }} />
         <AddExpenseForm handleSubmit={saveExpenseItem} />

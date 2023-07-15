@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { GlobalContext } from '../../context/GlobalState';
 import { CalculateTotalMonetaryAmount } from '../../helper';
 import { Slider } from '../../components/Slider';
+import { HistoryList } from '../../components/HistoryList';
 import './Overview.css';
 
 export const Overview = () => {
@@ -19,6 +20,7 @@ export const Overview = () => {
           maxValue={totalBudget}
           isDisabled={true} />
         <hr />
+        <HistoryList items={expenses} />
       </div>
     </div>
   )
