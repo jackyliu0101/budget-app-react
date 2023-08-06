@@ -5,13 +5,13 @@ const initialState = {
   budgets: [
     {
       id: 1,
-      name: "Miscellaneous",
-      amount: 100,
+      name: "Food",
+      amount: 100
     },
     {
       id: 2,
-      name: "Food",
-      amount: 30.5
+      name: "Entertainment",
+      amount: 50,
     },
   ],
   expenses: [
